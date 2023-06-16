@@ -6,6 +6,7 @@ const app = express()
 const PORT  = !process.env.PORT? 3000 : process.env.PORT
 
 app.use("*", require("./src/index"))
+app.use("/api",require("./src/API"))
 app.get("/helloworld",(req,res)=>res.send({message:"hello world"}))
 app.get("/",(req,res)=>res.redirect("/helloworld"))
 
